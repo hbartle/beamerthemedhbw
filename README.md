@@ -1,12 +1,17 @@
 # DHBW Beamer Theme
 
-This is a pretty beamer theme in the style of DHBW presentation.
+This is a pretty beamer theme in the style of a DHBW presentation.
 It is based on jacksbeamertheme by JacknJo (https://github.com/JacknJo/jacksbeamertheme), credits belong to him.
-I created a color palette to match the red-gred-black DHBW logo.
+
+I created a color palette to match the red-grey-black DHBW logo and added the possibility to add a company logo.
+
 
 # Requirements
 The theme was successfully tested with TexLive2016 and Miktex2.9.
 Please raise an issue if there are any problems with your setup.
+
+To build the example you can use the provided Makefile, in which case you need to have GNU Make installed.
+
 
 # HowTo
 Clone the repository to your location by using:
@@ -21,5 +26,10 @@ To build the example, simply run:
 
 in the cloned repository
 
+# Images
+![Alt text](images/titlepage.png?raw=true "Titlepage")
+
+
+![Alt text](images/frame.png?raw=true "Example Frame")
 
 
