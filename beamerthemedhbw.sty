@@ -1,23 +1,39 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%	
-%% File Name:		beamerthemedhbw.sty				
-%%											
+%%
 %% Description:		This is the main style file for a nice beamer 
 %% 					presentation layout suiting the colors of the DHBW.
 %%
+%%					The beamerthemedhbw is based on jacksbeamertheme
+%%					(https://github.com/JacknJo/jacksbeamertheme)
+%%
 %% Author:			Hannes Bartle																				
 %% 					DHBW Ravensburg Campus Friedrichshafen		
-%%					September 2016											
-%%
+%%					September 2016	
+%% 
+%% The beamerthemedhbw is free software: you can redistribute it and/or modify
+%% it under the terms of the GNU General Public License as published by
+%% the Free Software Foundation, either version 3 of the License, or
+%% (at your option) any later version.
+%% 
+%% The beamerthemedhbw is distributed in the hope that it will be useful,
+%% but WITHOUT ANY WARRANTY; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%% GNU General Public License for more details.
+%% 
+%% You should have received a copy of the GNU General Public License
+%% along with the beamerthemedhbw.  If not, see <http://www.gnu.org/licenses/>.
+%% 
+%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \mode<presentation>
 
-% Requirement
+% Requirements
 
 \RequirePackage{tikz, xcolor, tabularx, fp, color, nameref, ragged2e, calc}
 
 
-
+% Define Geometry
 \geometry{left = 0.06\paperwidth}
 \geometry{right = 0.11\paperwidth}
 
@@ -25,6 +41,7 @@
 % Commands
 \newcommand{\addcontents}{1}
 \newcommand{\drawcontents}{1}
+
 \makeatletter
 \newcommand{\currentname}{\@currentlabelname}
 \makeatother
@@ -70,6 +87,40 @@
 \newlength{\companylogoy}
 \setlength{\companylogoy}{0.9\paperheight}
 \newcommand{\usecompanylogo}{0}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%% Custom Functions %%%%%%%
+\newcommand{\drawopp}{%
+	\begin{tikzpicture}[y=0.80pt, x=0.80pt, scale=0.25, inner sep=0pt, outer sep=0pt]
+	\path[fill=black] (-481.6875,1096.1562) -- (-508.9062,1117.3750) --
+	  (-481.6875,1138.5625) .. controls (-481.6875,1138.5625) and
+	  (-486.8263,1130.0815) .. (-488.1562,1121.2812) -- (-422.4375,1121.2812) ..
+	  controls (-423.7675,1130.0814) and (-428.9062,1138.5625) ..
+	  (-428.9062,1138.5625) -- (-401.6875,1117.3750) -- (-428.9062,1096.1562) ..
+	  controls (-428.9062,1096.1562) and (-423.7742,1104.6475) ..
+	  (-422.4375,1113.4375) -- (-488.1562,1113.4375) .. controls
+	  (-486.8197,1104.6474) and (-481.6875,1096.1562) .. (-481.6875,1096.1562) --
+	  cycle;
+	\end{tikzpicture}
+}
+
+\newcommand{\myCheck}{
+	\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-0.18, xscale=0.18, inner sep=0pt, outer sep=0pt]
+	\path[draw=dh_grey,line join=round,line cap=round,miter limit=4.00,line
+	width=2.100pt,rounded corners=0.0000cm] (295.0000,420.9336) rectangle
+	(395.0000,520.9336);
+	\path[draw=black,line join=miter,line cap=round,miter limit=4.00,even odd
+	rule,line width=2.5pt] (307.9327,463.8016) -- (341.2462,507.1091) --
+	(410.6824,425.8807);
+	\end{tikzpicture}}
+
+\newcommand{\myUnCheck}{
+	\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-0.18, xscale=0.18, inner sep=0pt, outer sep=0pt]
+	\path[draw=dh_grey,line join=round,line cap=round,miter limit=4.00,line
+	width=2.100pt,rounded corners=0.0000cm] (295.0000,420.9336) rectangle
+	(395.0000,520.9336);
+	\end{tikzpicture}}
 
 \newcommand{\printbibliographyframe}{
 	\section*{\biblographySection}
@@ -83,6 +134,8 @@
 		\frametitle{\outlineSection}
 		\tableofcontents[currentsection]
 	\end{frame}}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Settings
 \useinnertheme{dhbw}
@@ -90,5 +143,5 @@
 \usecolortheme{dhbw}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{blocks}[rounded][shadow=true]  
+\setbeamertemplate{blocks}[shadow=true]  
 \mode<all>

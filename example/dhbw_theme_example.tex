@@ -1,14 +1,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%	
-%% File Name:		dhbw_theme_example.tex				
-%%											
-%% Description:		Example presentation using the dhbw beamer theme.
+%%
+%% Description:		This is an example presentation using the beamerthemedhbw
+%%
+%%					The beamerthemedhbw is based on jacksbeamertheme
+%%					(https://github.com/JacknJo/jacksbeamertheme)
 %%
 %% Author:			Hannes Bartle																				
 %% 					DHBW Ravensburg Campus Friedrichshafen		
-%%					September 2016											
-%%
+%%					September 2016	
+%% 
+%% The beamerthemedhbw is free software: you can redistribute it and/or modify
+%% it under the terms of the GNU General Public License as published by
+%% the Free Software Foundation, either version 3 of the License, or
+%% (at your option) any later version.
+%% 
+%% The beamerthemedhbw is distributed in the hope that it will be useful,
+%% but WITHOUT ANY WARRANTY; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%% GNU General Public License for more details.
+%% 
+%% You should have received a copy of the GNU General Public License
+%% along with the beamerthemedhbw.  If not, see <http://www.gnu.org/licenses/>.
+%% 
+%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \documentclass[	12pt, 				
 				t,					
 				aspectratio=169]{beamer}
@@ -141,6 +158,34 @@
 			 \end{itemize}
 		\end{tabularx}
 		\end{center}
+	\end{frame}
+	
+	\begin{frame}{Comparison}{of two items}
+		This is a example comparison:
+		\begin{center}
+		\begin{tabularx}{\textwidth}{XcX}
+			\textbf{Advantages} & & \textbf{Disadvantages}\\
+			lifetime & \drawopp & weight \\
+			easy handling & \drawopp & resolution \\
+			costs & \drawopp & integration time (also works for long texts)\\
+			another & \drawopp & ... \\
+		\end{tabularx}
+		\end{center}
+	\end{frame} 
+	
+	
+	\begin{frame}{Todo}{list of all tasks}
+		Many projects have deadlines and tasks you have to fulfill by a certain date.
+		Presenting them the following way is very easy and leaves a good and professional impression.
+		\vfill
+		\begin{tabularx}{\textwidth}{Xll}
+			\textbf{task} & \textbf{deadline} & \textbf{state}\\
+			basic tutorials in creating a beamer template & 01.02.03 & \myCheck \\
+			starting a own development & 01.03.16 & \myCheck \\
+			creating a presentation with all the theme's capabilities & 03.04.16 & \myCheck \\
+			finishing the beamer template & 01.06.16 & \myUnCheck\\
+		\end{tabularx}
+		\vfill
 	\end{frame}
 	
 		
