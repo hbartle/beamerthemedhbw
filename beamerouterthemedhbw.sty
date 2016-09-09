@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Description:		This file contains the frame content definitions.
+%%
+%%					The beamerthemedhbw is based on jacksbeamertheme
+%%					(https://github.com/JacknJo/jacksbeamertheme)
+%%
+%% Author:			Hannes Bartle																				
+%% 					DHBW Ravensburg Campus Friedrichshafen		
+%%					September 2016	
+%% 
+%% The beamerthemedhbw is free software: you can redistribute it and/or modify
+%% it under the terms of the GNU General Public License as published by
+%% the Free Software Foundation, either version 3 of the License, or
+%% (at your option) any later version.
+%% 
+%% The beamerthemedhbw is distributed in the hope that it will be useful,
+%% but WITHOUT ANY WARRANTY; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%% GNU General Public License for more details.
+%% 
+%% You should have received a copy of the GNU General Public License
+%% along with the beamerthemedhbw.  If not, see <http://www.gnu.org/licenses/>.
+%% 
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<presentation>
+
+%%%%%%%% Frame title and subtitle posititon %%%%%%%%% 
+\setbeamertemplate{headline}{
+
+	\ifnum\insertframenumber>0\relax
+	
+		\setlength{\buffer}{\frametitleoffset - 0.25cm}
+		\vspace*{\buffer}
+		\setlength{\buffer}{0.06\paperwidth -0.1cm}
+		\hspace*{\buffer}
+		%\hspace*{0.06\paperwidth}
+		\drawandcalcheight{
+		\begin{beamercolorbox}[wd=1.0\paperwidth,ht=1.15cm,dp=1ex,left]{frametitle}
+			\usebeamercolor{frametitle}\usebeamerfont{frametitle}\insertframetitle
+		\end{beamercolorbox}
+		}{\titleheight}
+		
+		\setlength{\buffer}{0.123\paperheight - \the\titleheight - \frametitleoffset + \framesubtitleoffset}
+		\vspace*{\buffer}
+		\begin{beamercolorbox}[wd=\paperwidth, ht=0.75cm]{subtitle}
+			\begin{small}
+				\setlength{\buffer}{0.065\paperwidth -0.1cm}
+				\hspace*{\buffer}
+				\noindent\insertframesubtitle
+				
+			\end{small}
+    	\end{beamercolorbox}
+    	
+	\fi
+}
+
+%%%%%%%% % Frame footline %%%%%%%%% 
+\setbeamertemplate{footline}{
+
+	\ifnum\insertframenumber>0\relax
+	
+		\vspace*{-1.5cm}
+		\begin{beamercolorbox}[wd=1.0\paperwidth,ht=1.25cm,dp=1ex,left]{frametitle}
+			\begin{tabularx}{0.99\paperwidth}{XXX}
+				\normalsize \textcolor{black}{\hspace*{0.275cm}\textbf{\currentname}} & \scriptsize\centering\textcolor{gray}{\middleText} & \normalsize \raggedleft \textcolor{black}{\insertframenumber/\inserttotalframenumber}\hspace*{0.275cm}\\
+			\end{tabularx}
+		\end{beamercolorbox}
+		\setlength{\buffer}{0.225cm + \framefootlineoffset}
+		\vspace*{\buffer}
+	\fi
+}
+
+\setbeamertemplate{frametitle}{
+	\setlength{\buffer}{0.175\paperheight + \frametextoffset}
+	\vspace*{\buffer}
+}
+
+\mode<all>

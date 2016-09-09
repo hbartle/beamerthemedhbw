@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Description:		This file contains the background and titlepage definition.
+%%
+%%					The beamerthemedhbw is based on jacksbeamertheme
+%%					(https://github.com/JacknJo/jacksbeamertheme)
+%%
+%% Author:			Hannes Bartle																				
+%% 					DHBW Ravensburg Campus Friedrichshafen		
+%%					September 2016	
+%% 
+%% The beamerthemedhbw is free software: you can redistribute it and/or modify
+%% it under the terms of the GNU General Public License as published by
+%% the Free Software Foundation, either version 3 of the License, or
+%% (at your option) any later version.
+%% 
+%% The beamerthemedhbw is distributed in the hope that it will be useful,
+%% but WITHOUT ANY WARRANTY; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%% GNU General Public License for more details.
+%% 
+%% You should have received a copy of the GNU General Public License
+%% along with the beamerthemedhbw.  If not, see <http://www.gnu.org/licenses/>.
+%% 
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<presentation>
+
+%%%%%%%%%%% Background %%%%%%%%%%%%%%
+\setbeamertemplate{background}{
+	\begin{tikzpicture}
+	
+		\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+		
+
+		\node[inner sep=0pt] (logo) at (\the\dhlogox, \the\dhlogoy) {\printdhlogo};
+
+		\ifnum\usecompanylogo>0
+			\node[inner sep=0pt] (logo) at (\the\companylogox, \the\companylogoy) {\printcompanylogo};
+		\fi
+		
+		\fill[color=dh_grey] (0,2) rectangle (\the\paperwidth,3);
+		
+		\fill[color=dh_red_dark] (0,1.5) rectangle(\the\paperwidth,2);
+		
+		\fill[color=dh_red_light] (0,0.5) rectangle(\the\paperwidth,1.5);
+		
+		\ifnum\thepage>1\relax%
+			\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+			\fill[color=dh_red_dark] (0, 0.81\paperheight) rectangle (0.05\paperwidth, 0.81\paperheight+0.47cm);
+			\fill[color=dh_grey_light] (0.06\paperwidth, 0.81\paperheight) rectangle(\paperwidth, 0.81\paperheight+0.47cm);
+			\path[left color = black, right color = black] (0,0.1\paperheight) rectangle (0.89\paperwidth, 0.1\paperheight+1pt);
+			\path[left color = dh_red_dark, right color = dh_red_dark] (0.9\paperwidth,0.1\paperheight) rectangle (\paperwidth, 0.1\paperheight+1pt);
+		\fi
+		
+	\end{tikzpicture}
+}
+
+%%%%%%%%%%% Title Page %%%%%%%%%%%%%%
+\defbeamertemplate*{title page}{dhbw}[1][]
+{ 
+	\begin{textblock}{0.6}(0.24, 0.3)
+		\begin{beamercolorbox}[wd=0.8\paperwidth]{title}
+			\usebeamerfont{title}
+			\raggedleft
+			\inserttitle\par
+		\end{beamercolorbox}
+	\end{textblock} 
+	
+	\begin{textblock}{0.6}(0.24, 0.52)
+		\begin{beamercolorbox}[wd=0.8\paperwidth]{author}
+			\usebeamerfont{author}
+			\raggedleft
+			\insertauthor\par
+		\end{beamercolorbox}
+	\end{textblock}
+	
+	\begin{textblock}{0.6}(0.1, 0.84)
+		\begin{beamercolorbox}[wd=12cm]{date}
+			\usebeamerfont{author}\insertdate
+		\end{beamercolorbox}
+	\end{textblock}
+	
+	\begin{textblock}{0.6}(0.1, 0.675)
+		\begin{beamercolorbox}[wd=12cm]{institute}
+			\usebeamerfont{author}\insertinstitute
+		\end{beamercolorbox}
+	\end{textblock}
+}
+
+%%%%%%%% Misc %%%%%%%%%
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamertemplate{itemize item}{\raisebox{0.035cm}{\tikz{\draw[color=black, line width=1pt] rectangle(.15,.15);}}}
+\setbeamertemplate{itemize subitem}{\raisebox{0.031cm}{\tikz{\draw[color=black, line width=1.3pt] rectangle(.10,.10);}}}
+\setbeamertemplate{itemize subsubitem}{\raisebox{0.031cm}{\tikz{\fill[color=black] rectangle(.10,.10);}}}
+
+\mode <all>
