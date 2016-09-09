@@ -27,9 +27,10 @@ To build the example, simply run:
 in the cloned repository
 
 # Images
+## Titlepage
 ![alt text](images/titlepage.PNG?raw=true "Titlepage")
 
-
+## An example frame
 ![alt text](images/frame.PNG?raw=true "Example Frame")
 
 
