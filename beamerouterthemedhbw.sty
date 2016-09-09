@@ -13,27 +13,56 @@
 \mode<presentation>
 
 % Frame title
-\defbeamertemplate*{frametitle}{dhbw}[1][]
-{
-	\vskip1cm%
+
+
+\setbeamertemplate{headline}{
+
+	\ifnum\insertframenumber>0\relax
 	
-	\begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{frametitle} 
-	
-	\begin{tikzpicture}
-	
-		\useasboundingbox[fill=white](0,0) rectangle(\the\paperwidth,1.2);
-	
+		\setlength{\buffer}{\frametitleoffset - 0.25cm}
+		\vspace*{\buffer}
+		\setlength{\buffer}{0.06\paperwidth -0.1cm}
+		\hspace*{\buffer}
+		%\hspace*{0.06\paperwidth}
+		\drawandcalcheight{
+		\begin{beamercolorbox}[wd=1.0\paperwidth,ht=1.15cm,dp=1ex,left]{frametitle}
+			\usebeamercolor{frametitle}\usebeamerfont{frametitle}\insertframetitle
+		\end{beamercolorbox}
+		}{\titleheight}
 		
-		\fill[dh_red_dark] (0,0) rectangle(\the\paperwidth,0.5);
+		\setlength{\buffer}{0.123\paperheight - \the\titleheight - \frametitleoffset + \framesubtitleoffset}
+		\vspace*{\buffer}
+		\begin{beamercolorbox}[wd=\paperwidth, ht=0.75cm]{subtitle}
+			\begin{small}
+				\setlength{\buffer}{0.065\paperwidth -0.1cm}
+				\hspace*{\buffer}
+				\noindent\insertframesubtitle
+				
+			\end{small}
+    	\end{beamercolorbox}
+    	
+	\fi
+}
+
+
+\setbeamertemplate{footline}{
+
+	\ifnum\insertframenumber>0\relax
 	
-		\ifx\insertframesubtitle\@empty%
-			{\node[anchor=west, black,font=\large] at (3.2,0.61){\insertframetitle};}
-		\else%
-			{\node[anchor= west, black,font=\large] at (3.2,0.81){\insertframetitle};%
-			\node[anchor= west, black,font=\small] at (3.2,0.41){\insertframesubtitle};}%
-		\fi
-  \end{tikzpicture}
-  \end{beamercolorbox}
+		\vspace*{-1.5cm}
+		\begin{beamercolorbox}[wd=1.0\paperwidth,ht=1.25cm,dp=1ex,left]{frametitle}
+			\begin{tabularx}{0.99\paperwidth}{XXX}
+				\normalsize \textcolor{black}{\hspace*{0.275cm}\textbf{\currentname}} & \scriptsize\centering\textcolor{gray}{\middleText} & \normalsize \raggedleft \textcolor{black}{\insertframenumber/\inserttotalframenumber}\hspace*{0.275cm}\\
+			\end{tabularx}
+		\end{beamercolorbox}
+		\setlength{\buffer}{0.225cm + \framefootlineoffset}
+		\vspace*{\buffer}
+	\fi
+}
+
+\setbeamertemplate{frametitle}{
+	\setlength{\buffer}{0.175\paperheight + \frametextoffset}
+	\vspace*{\buffer}
 }
 
 \mode<all>

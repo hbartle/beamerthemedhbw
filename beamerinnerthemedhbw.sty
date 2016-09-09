@@ -32,6 +32,10 @@
 		
 		\ifnum\thepage>1\relax%
 			\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+			\fill[color=dh_red_dark] (0, 0.81\paperheight) rectangle (0.05\paperwidth, 0.81\paperheight+0.47cm);
+			\fill[color=dh_grey_light] (0.06\paperwidth, 0.81\paperheight) rectangle(\paperwidth, 0.81\paperheight+0.47cm);
+			\path[left color = black, right color = black] (0,0.1\paperheight) rectangle (0.89\paperwidth, 0.1\paperheight+1pt);
+			\path[left color = dh_red_dark, right color = dh_red_dark] (0.9\paperwidth,0.1\paperheight) rectangle (\paperwidth, 0.1\paperheight+1pt);
 		\fi
 		
 	\end{tikzpicture}
@@ -58,8 +62,21 @@
 		\usebeamerfont{author}\insertdate
 	\end{beamercolorbox}
 	
+	\vskip0.2cm
+	
+	\begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{institute}
+		\usebeamerfont{author}\insertinstitute
+	\end{beamercolorbox}
 	\vfill
 }
+
+
+
+
+
+
+
+
 
 % Items
 

@@ -9,7 +9,9 @@
 %%					September 2016											
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass{beamer}
+\documentclass[	12pt, 				
+				t,					
+				aspectratio=169]{beamer}
 
 
 \usepackage[utf8]{inputenc}
@@ -17,47 +19,140 @@
 
 
 \title{There Is No Largest Prime Number}
-\date[ISPN ’80]{27th International Symposium of Prime Numbers}
-\author[Euclid]{Euclid of Alexandria \texttt{euclid@alexandria.edu}}
+\date{Friedrichshafen\\\today}
+\author{Hannes Bartle \texttt{euclid@alexandria.edu}}
 \institute{DHBW Ravensburg Campus Friedrichshafen}
 
 \usetheme{dhbw}
 \renewcommand{\usecompanylogo}{1}
-%\setlength{\companylogox}{2cm}
-%\setlength{\companylogoy}{0.9\paperheight}
+
 \newcommand{\printcompanylogo}{\includegraphics[width=4cm]{example/airbus_logo.png}}
 
+\newcommand{\middleText}{Hannes Bartle}
+\newcommand{\outlineSection}{Outline}
 
+\setlength{\framesubtitleoffset}{0pt}
+\setlength{\frametitleoffset}{0.05cm}
+\setlength{\frametextoffset}{0.1cm}
+\setlength{\framefootlineoffset}{0cm}
 
 
 \begin{document}
-
-	\begin{frame}
+	
+	\begin{frame}[noframenumbering]
 		\titlepage
 	\end{frame}
 
 
-	\begin{frame} 
-
-		\frametitle{There Is No Largest Prime Number} 
-		\framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
-
-		\begin{theorem}
-			There is no largest prime number. 
-		\end{theorem} 
-		\begin{enumerate} 
-			\item<1-> Suppose $p$ were the largest prime number. 
-			\item<2-> Let $q$ be the product of the first $p$ numbers. 
-			\item<3-> Then $q+1$ is not divisible by any of them. 
-			\item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime number not in the first $p$ numbers.
-		\end{enumerate}
+	\begin{frame}{Outline}
+		\tableofcontents
 	\end{frame}
 
-	\begin{frame}{A longer title}
+
+	\outlineFrame{Introduction}
+	
+	
+	\begin{frame}{Background}{\& personal inspiration}
+		Hello all of you! 
+		
+		I'm Jack, 20 years old and student in electrical engineering in Friedrichshafen in Germany.
+		This is my first try to design a own \LaTeX{} template.
+		
+		It's advantages are:
 		\begin{itemize}
-			\item one
-			\item two
+			\item clean structure
+			\item nice \& consistent design
+			\item easy to use with a small basic \LaTeX{} knowledge
+			\item useful additional commands
+			\item export file is \texttt{.pdf} which can be opened nearly anywhere!
 		\end{itemize}
 	\end{frame}
+	
+	
+	\outlineFrame{Utilities}
+	
+	
+	
+	\begin{frame}{Itemize}{}
+		One of the most common ways to create slides is to use lots of itemizes.
+		
+		They are used for:
+		\begin{itemize}
+			\item better readability
+			\item as short descriptions
+			\begin{itemize}
+				\item for easy points
+				\item or difficult
+				\begin{itemize}
+					\item topics
+					\item statements
+				\end{itemize}
+			\end{itemize}
+			\item <2-> they also can be made visible item by item
+			\item <3-> like this!
+		\end{itemize}
+	\end{frame}
+	
+	
+	
+	\begin{frame}{Math environment}{presenting formula is very easy in \LaTeX}
+		\vfill
+		\begin{equation*}
+			f(x)=\sum_{i=0}^\infty \frac{f^{(i)}(x_0)}{i!}(x-x_0)^i
+		\end{equation*}
+		\vfill
+		\begin{equation*}
+			\displaystyle\frac{\pi^2}{6}=\lim_{n \to \infty}\sum_{k=1}^n \frac{1}{k^2}
+		\end{equation*}
+		\vfill
+	\end{frame}
+	
+	
+	\begin{frame}{Blocks}{example, alert and standard}
+	    \begin{exampleblock}{Exampleblock}
+			Inside this box you can place an example or a task for your audience:
+			
+			What is the square root of 144? $\sqrt{144} = $
+		\end{exampleblock}
+		\begin{alertblock}{Alertblock}			
+			There is no real solution to a negative square root!
+		\end{alertblock}
+		\begin{block}{Block}
+			Use this for any other reason you can imagine!
+		\end{block}
+	\end{frame}
+	
+	
+	\begin{frame}{Comparison}{of advantages and disadvantages}
+		This is a example comparison:
+		\begin{center}
+		\begin{tabularx}{0.8\textwidth}{X|X}
+			\textbf{Advantages}
+			 \begin{itemize}[<2->]
+			 	\item lifetime
+			 	\item easy handling
+			 	\item costs
+			 \end{itemize} &
+			\textbf{Disadvantages}
+			 \begin{itemize}[<3->]
+			 	\item weight
+			 	\item resolution
+			 	\item integration time
+			 \end{itemize}
+		\end{tabularx}
+		\end{center}
+	\end{frame}
+	
+		
+	\section*{The End}
+	\begin{frame}
+		\vspace{2.2cm}
+		\begin{center}
+			\huge Thank you for watching this presentation.\\
+			Have fun creating your own!
+		\end{center}
+		\vfill
+	\end{frame}
+	
 
 \end{document}

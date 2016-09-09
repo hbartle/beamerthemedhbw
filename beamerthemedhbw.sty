@@ -14,15 +14,12 @@
 
 % Requirement
 
-\RequirePackage{tikz, xcolor}
+\RequirePackage{tikz, xcolor, tabularx, fp, color, nameref, ragged2e, calc}
 
-% Settings
-\useinnertheme{dhbw}
-\useoutertheme{dhbw}
-\usecolortheme{dhbw}
 
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{blocks}[rounded][shadow=true]  
+
+\geometry{left = 0.06\paperwidth}
+\geometry{right = 0.11\paperwidth}
 
 
 % Commands
@@ -87,5 +84,11 @@
 		\tableofcontents[currentsection]
 	\end{frame}}
 
+% Settings
+\useinnertheme{dhbw}
+\useoutertheme{dhbw}
+\usecolortheme{dhbw}
 
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]  
 \mode<all>
