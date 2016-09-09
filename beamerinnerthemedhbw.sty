@@ -1,0 +1,73 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%	
+%% File Name:		beamerinnerthemedhbw.sty				
+%%											
+%% Description:		This is the main style file for a nice beamer 
+%% 					presentation layout suiting the colors of the DHBW.
+%%
+%% Author:			Hannes Bartle																				
+%% 					DHBW Ravensburg Campus Friedrichshafen		
+%%					September 2016											
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<presentation>
+
+\setbeamertemplate{background}{
+	\begin{tikzpicture}
+	
+		\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+		
+
+		\node[inner sep=0pt] (logo) at (\the\dhlogox, \the\dhlogoy) {\printdhlogo};
+
+		\ifnum\usecompanylogo>0
+			\node[inner sep=0pt] (logo) at (\the\companylogox, \the\companylogoy) {\printcompanylogo};
+		\fi
+		
+		\fill[color=dh_grey] (0,2) rectangle (\the\paperwidth,3);
+		
+		\fill[color=dh_red_dark] (0,1.5) rectangle(\the\paperwidth,2);
+		
+		\fill[color=dh_red_light] (0,0.5) rectangle(\the\paperwidth,1.5);
+		
+		\ifnum\thepage>1\relax%
+			\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+		\fi
+		
+	\end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{dhbw}[1][]
+{ 
+	\vskip3cm
+	
+	\begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{title page header}
+		\usebeamerfont{title}\inserttitle
+	\end{beamercolorbox}
+	
+	\vskip0.75cm
+	
+	\begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
+		\usebeamerfont{author}\insertauthor
+	\end{beamercolorbox}
+	
+	\vskip0.2cm
+	
+	\begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{date}
+		\usebeamerfont{author}\insertdate
+	\end{beamercolorbox}
+	
+	\vfill
+}
+
+% Items
+
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamertemplate{itemize item}{\raisebox{0.035cm}{\tikz{\draw[color=black, line width=1pt] rectangle(.15,.15);}}}
+\setbeamertemplate{itemize subitem}{\raisebox{0.031cm}{\tikz{\draw[color=black, line width=1.3pt] rectangle(.10,.10);}}}
+\setbeamertemplate{itemize subsubitem}{\raisebox{0.031cm}{\tikz{\fill[color=black] rectangle(.10,.10);}}}
+
+\mode <all>

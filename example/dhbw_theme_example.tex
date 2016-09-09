@@ -10,42 +10,54 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{beamer}
+
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+
+
 \title{There Is No Largest Prime Number}
 \date[ISPN ’80]{27th International Symposium of Prime Numbers}
 \author[Euclid]{Euclid of Alexandria \texttt{euclid@alexandria.edu}}
+\institute{DHBW Ravensburg Campus Friedrichshafen}
 
 \usetheme{dhbw}
+\renewcommand{\usecompanylogo}{1}
+%\setlength{\companylogox}{2cm}
+%\setlength{\companylogoy}{0.9\paperheight}
+\newcommand{\printcompanylogo}{\includegraphics[width=4cm]{example/airbus_logo.png}}
+
+
+
 
 \begin{document}
 
-\begin{frame}
-\titlepage
-\end{frame}
+	\begin{frame}
+		\titlepage
+	\end{frame}
 
 
-\begin{frame} 
+	\begin{frame} 
 
-\frametitle{There Is No Largest Prime Number} 
-\framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
+		\frametitle{There Is No Largest Prime Number} 
+		\framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
 
-\begin{theorem}
-There is no largest prime number. \end{theorem} 
-\begin{enumerate} 
-\item<1-| alert@1> Suppose $p$ were the largest prime number. 
-\item<2-> Let $q$ be the product of the first $p$ numbers. 
-\item<3-> Then $q+1$ is not divisible by any of them. 
-\item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
-number not in the first $p$ numbers.
-\end{enumerate}
-\end{frame}
+		\begin{theorem}
+			There is no largest prime number. 
+		\end{theorem} 
+		\begin{enumerate} 
+			\item<1-> Suppose $p$ were the largest prime number. 
+			\item<2-> Let $q$ be the product of the first $p$ numbers. 
+			\item<3-> Then $q+1$ is not divisible by any of them. 
+			\item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime number not in the first $p$ numbers.
+		\end{enumerate}
+	\end{frame}
 
-\begin{frame}{A longer title}
-\begin{itemize}
-\item one
-\item two
-\end{itemize}
-\end{frame}
+	\begin{frame}{A longer title}
+		\begin{itemize}
+			\item one
+			\item two
+		\end{itemize}
+	\end{frame}
 
 \end{document}

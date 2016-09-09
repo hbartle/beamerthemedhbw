@@ -1,0 +1,91 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%	
+%% File Name:		beamerthemedhbw.sty				
+%%											
+%% Description:		This is the main style file for a nice beamer 
+%% 					presentation layout suiting the colors of the DHBW.
+%%
+%% Author:			Hannes Bartle																				
+%% 					DHBW Ravensburg Campus Friedrichshafen		
+%%					September 2016											
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<presentation>
+
+% Requirement
+
+\RequirePackage{tikz, xcolor}
+
+% Settings
+\useinnertheme{dhbw}
+\useoutertheme{dhbw}
+\usecolortheme{dhbw}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]  
+
+
+% Commands
+\newcommand{\addcontents}{1}
+\newcommand{\drawcontents}{1}
+\makeatletter
+\newcommand{\currentname}{\@currentlabelname}
+\makeatother
+
+\newlength{\titleheight}
+\newlength{\subtitleheight}
+\newlength{\buffer}
+
+\newcommand{\drawandcalcheight}[2]{\setbox0=\hbox{#1}#2=\ht0 \advance#2 by \dp0 #1}
+
+\newlength{\titleoffset}
+\setlength{\titleoffset}{0pt}
+
+\newlength{\subtitleoffset}
+\setlength{\titleoffset}{0pt}
+
+\newlength{\frametitleoffset}
+\setlength{\frametitleoffset}{0pt}
+
+\newlength{\framesubtitleoffset}
+\setlength{\framesubtitleoffset}{0pt}
+
+\newlength{\frametextoffset}
+\setlength{\frametextoffset}{0pt}
+
+\newlength{\framefootlineoffset}
+\setlength{\framefootlineoffset}{0pt}
+
+\newlength{\dateoffset}
+\setlength{\dateoffset}{0pt}
+
+%%%%%%%% Logos %%%%%%%%%
+\newlength{\dhlogox}
+\setlength{\dhlogox}{2cm}
+
+\newlength{\dhlogoy}
+\setlength{\dhlogoy}{0.9\paperheight}
+\newcommand{\printdhlogo}{\includegraphics[width=3cm]{dhbw_logo.png}}
+
+\newlength{\companylogox}
+\setlength{\companylogox}{0.8\paperwidth}
+
+\newlength{\companylogoy}
+\setlength{\companylogoy}{0.9\paperheight}
+\newcommand{\usecompanylogo}{0}
+
+\newcommand{\printbibliographyframe}{
+	\section*{\biblographySection}
+	\begin{frame}[allowframebreaks]{\biblographySection}
+		\printbibliography
+	\end{frame}}
+	
+\newcommand{\outlineFrame}[1]{%
+	\section{#1}\label{sec:#1}%
+	\begin{frame}
+		\frametitle{\outlineSection}
+		\tableofcontents[currentsection]
+	\end{frame}}
+
+
+\mode<all>
