@@ -59,30 +59,33 @@
 %%%%%%%%%%% Title Page %%%%%%%%%%%%%%
 \defbeamertemplate*{title page}{dhbw}[1][]
 { 
-	\vskip3cm
+	\begin{textblock}{0.6}(0.24, 0.3)
+		\begin{beamercolorbox}[wd=0.8\paperwidth]{title}
+			\usebeamerfont{title}
+			\raggedleft
+			\inserttitle\par
+		\end{beamercolorbox}
+	\end{textblock} 
 	
-	\begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{title page header}
-		\usebeamerfont{title}\inserttitle
-	\end{beamercolorbox}
+	\begin{textblock}{0.6}(0.24, 0.52)
+		\begin{beamercolorbox}[wd=0.8\paperwidth]{author}
+			\usebeamerfont{author}
+			\raggedleft
+			\insertauthor\par
+		\end{beamercolorbox}
+	\end{textblock}
 	
-	\vskip0.75cm
+	\begin{textblock}{0.6}(0.1, 0.84)
+		\begin{beamercolorbox}[wd=12cm]{date}
+			\usebeamerfont{author}\insertdate
+		\end{beamercolorbox}
+	\end{textblock}
 	
-	\begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
-		\usebeamerfont{author}\insertauthor
-	\end{beamercolorbox}
-	
-	\vskip0.2cm
-	
-	\begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{date}
-		\usebeamerfont{author}\insertdate
-	\end{beamercolorbox}
-	
-	\vskip0.2cm
-	
-	\begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{institute}
-		\usebeamerfont{author}\insertinstitute
-	\end{beamercolorbox}
-	\vfill
+	\begin{textblock}{0.6}(0.1, 0.675)
+		\begin{beamercolorbox}[wd=12cm]{institute}
+			\usebeamerfont{author}\insertinstitute
+		\end{beamercolorbox}
+	\end{textblock}
 }
 
 %%%%%%%% Misc %%%%%%%%%
