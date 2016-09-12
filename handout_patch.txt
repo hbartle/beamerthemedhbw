@@ -1,0 +1,13 @@
+diff --git a/example/dhbw_theme_example.tex b/example/dhbw_theme_example.tex
+index 66af84d..0dbdc76 100644
+--- a/example/dhbw_theme_example.tex
++++ b/example/dhbw_theme_example.tex
+@@ -29,7 +29,7 @@
+ \documentclass[	12pt, 				
+ 				t,					
+ 				aspectratio=169,
+-				%handout
++				handout
+ 				]{beamer}
+ 
+ 
