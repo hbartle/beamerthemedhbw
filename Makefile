@@ -111,7 +111,7 @@ glos:
 	
 .PHONY:
 handout: patch_apply all patch_reverse	
-	@$(MOVE) $(MAINFILE).pdf $(MAINFILE)_handout.pdf
+	@$(MOVE) $(EXAMPLE)$(MAINFILE).pdf $(EXAMPLE)$(MAINFILE)_handout.pdf
 	
 # Apply Patches
 .PHONY: patch_apply 
@@ -150,6 +150,11 @@ viewpdf:
 	@$(ECHO) "=======================================================================""$(ECHONC)"
 	@$(VIEWPDF) $(EXAMPLE)$(MAINFILE).pdf &
 	
+viewhandout:
+	@$(ECHO) "$(ECHOCOLOR)""======================================================================="
+	@$(ECHO) "View PDF..."
+	@$(ECHO) "=======================================================================""$(ECHONC)"
+	@$(VIEWPDF) $(EXAMPLE)$(MAINFILE)_handout.pdf &	
 	
 
 # View Warning/Error Messages
