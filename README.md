@@ -24,7 +24,21 @@ To build the example, simply run:
 
 	make 
 
-in the cloned repository
+in the cloned repository and
+
+	make view 
+
+to show the result.
+
+To clean the working directory, run:
+
+	make mrproper
+
+To build a handout version, run:
+
+	make handout
+
+
 
 # Images
 ## Titlepage
