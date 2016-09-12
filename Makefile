@@ -46,6 +46,7 @@ ECHOCOLOR = \033[1;32m
 ECHONC = \033[0m
 MOVE = mv
 MKDIR	= mkdir
+GIT	= git
 VIEWPDF = firefox
 PARSELOG = grep --color -E ".*:[0-9]*:.*|Warning:|Error:" $(BUILDDIR)$(MAINFILE).log
 
@@ -81,9 +82,53 @@ pdf2:
 	@$(ECHO) "Done!!"
 	@$(ECHO) "=======================================================================""$(ECHONC)"
 
-	
+.PHONY: bib
+bib:
+
+	@$(ECHO) "$(ECHOCOLOR)""\\n======================================================================="
+	@$(ECHO) "Build bibliography..."
+	@$(ECHO) "=======================================================================""$(ECHONC)"
+	$(BIB) $(BIBFLAGS) $(BUILDDIR)$(MAINFILE)
+	@$(ECHO) "$(ECHOCOLOR)""\\n======================================================================="
+	@$(ECHO) "Done!!"
+	@$(ECHO) "=======================================================================""$(ECHONC)"
+
+.PHONY: glos
+glos:
+
+	@$(ECHO) "$(ECHOCOLOR)""\\n======================================================================="
+	@$(ECHO) "Build glossary..."
+	@$(ECHO) "=======================================================================""$(ECHONC)"
+	$(INDEX) -s $(BUILDDIR)$(MAINFILE).ist -t $(BUILDDIR)$(MAINFILE).glg -o $(BUILDDIR)$(MAINFILE).gls $(BUILDDIR)$(MAINFILE).glo
+	@$(ECHO) "$(ECHOCOLOR)""\\n======================================================================="
+	@$(ECHO) "Build list of abbreviations..."
+	@$(ECHO) "=======================================================================""$(ECHONC)"
+	$(INDEX) -s $(BUILDDIR)$(MAINFILE).ist -t $(BUILDDIR)$(MAINFILE).alg -o $(BUILDDIR)$(MAINFILE).acr $(BUILDDIR)$(MAINFILE).acn 
+	@$(ECHO) "$(ECHOCOLOR)""\\n======================================================================="
+	@$(ECHO) "Done!!"
+	@$(ECHO) "=======================================================================""$(ECHONC)"	
 
 	
+.PHONY:
+handout: patch_apply all patch_reverse	
+	@$(MOVE) $(MAINFILE).pdf $(MAINFILE)_handout.pdf
+	
+# Apply Patches
+.PHONY: patch_apply 
+patch_apply:
+	@$(ECHO) "$(ECHOCOLOR)""\\n======================================================================="
+	@$(ECHO) "Apply patch"
+	@$(ECHO) "=======================================================================""$(ECHONC)"
+	$(GIT) apply handout_patch.txt
+
+	
+# Reverse Patches
+.PHONY: patch_reverse
+patch_reverse:
+	@$(ECHO) "$(ECHOCOLOR)""\\n======================================================================="
+	@$(ECHO) "Reverse patch"
+	@$(ECHO) "=======================================================================""$(ECHONC)"
+	$(GIT) apply -R handout_patch.txt	
 	
 # Clean Working Directory
 mrproper:
