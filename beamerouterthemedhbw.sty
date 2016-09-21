@@ -57,14 +57,22 @@
 }
 
 %%%%%%%% % Frame footline %%%%%%%%% 
+\setbeamertemplate{section in head/foot shaded}{%
+	| \ \ \color{dh_grey_light}\insertsectionhead
+}
+\setbeamertemplate{section in head/foot}{%
+	| \ \ \color{black}\insertsectionhead
+}
+
+
 \setbeamertemplate{footline}{
 
 	\ifnum\insertframenumber>0\relax
 	
 		\vspace*{-1.5cm}
 		\begin{beamercolorbox}[wd=1.0\paperwidth,ht=1.25cm,dp=1ex,left]{frametitle}
-			\begin{tabularx}{0.99\paperwidth}{XXX}
-				\normalsize \textcolor{black}{\hspace*{0.275cm}\textbf{\currentname}} & \scriptsize\centering\textcolor{gray}{\middleText} & \normalsize \raggedleft \textcolor{black}{\insertframenumber/\inserttotalframenumber}\hspace*{0.275cm}\\
+			\begin{tabularx}{0.99\paperwidth}{XX}
+				\scriptsize \insertsectionnavigationhorizontal{0.4\paperwidth}{}{} & \normalsize \raggedleft \textcolor{black}{\insertframenumber/\inserttotalframenumber}\hspace*{0.275cm}\\
 			\end{tabularx}
 		\end{beamercolorbox}
 		\setlength{\buffer}{0.225cm + \framefootlineoffset}
