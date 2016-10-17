@@ -16,7 +16,7 @@ To build the example you can use the provided Makefile, in which case you need t
 # HowTo
 Clone the repository to your location by using:
 
-    git clone https://github.com/JacknJo/jacksbeamertheme.git
+    git clone https://github.com/hbartle/beamerthemedhbw.git
 
 To use the theme you have to copy all .sty files and the dhbw logo into your working directory or your local beamer theme repository.
 
